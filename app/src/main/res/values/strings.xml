@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FirebaseFirestore</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="enter_age">Enter Age</string>
+    <string name="save_to_database">Save to Database</string>
 </resources>

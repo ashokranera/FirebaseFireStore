@@ -12,29 +12,51 @@
         android:id="@+id/edt_FirstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:hint="Enter Name" />
+        android:layout_marginTop="10dp"
+        android:hint="@string/enter_name" />
 
     <EditText
         android:id="@+id/edt_LastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/edt_FirstName"
-        android:hint="Last Name" />
+        android:hint="@string/last_name" />
 
     <EditText
         android:id="@+id/edt_Age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/edt_LastName"
-        android:hint="Enter Age"
+        android:hint="@string/enter_age"
         android:inputType="number" />
 
     <Button
-        android:id="@+id/btn_btnUploadData"
+        android:id="@+id/btn_UploadData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/edt_Age"
-        android:text="Save to Database" />
+        android:text="@string/save_to_database" />
 
+    <Button
+        android:id="@+id/btn_RetrieveData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_UploadData"
+        android:text="Retrieve Data" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btn_RetrieveData"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/txt_Persons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp" />
+
+
+    </ScrollView>
 </RelativeLayout>
