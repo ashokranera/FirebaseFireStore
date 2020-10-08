@@ -29,8 +29,30 @@ class MainActivity : AppCompatActivity() {
             savePerson(person)
         }
 
-        btn_RetrieveData.setOnClickListener {
-            retrievePersons()
+        subscribeToRealtimeUpdate()
+
+//        btn_RetrieveData.setOnClickListener {
+//            retrievePersons()
+//        }
+
+    }
+
+    private fun subscribeToRealtimeUpdate() {
+        personCollectionRef.addSnapshotListener { value, error ->
+            error?.let {
+                Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
+                return@addSnapshotListener
+            }
+            value?.let {
+                val sb = StringBuilder()
+                for (document in it) {
+                    val person = document.toObject<Person>()
+                    sb.append("$person\n")
+                }
+
+                txt_Persons.text = sb.toString()
+
+            }
         }
 
     }
